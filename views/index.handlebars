@@ -1,1 +1,79 @@
-<h1>私房錢</h1>
+<div class="container" >
+    <div class="row justify-content-center">
+        <div class="justify-content-center mt-4" style="width: 400px; height: 50px">
+            <form action="/" method="GET" id="filterOption">
+                <select class="form-control-lg col-8" placeholder="Readonly input here..." name="filter" id="filter" onchange="filterOption.submit()">
+                    <option value="">Category</option>
+                    {{#each categories}}
+                        <option value="{{this._id}}" {{#if this.selected}}selected{{/if}}>{{this.name}}</option>
+                    {{/each}}
+                </select>
+            </form>
+        </div>
+    </div>
+    <div class="container mt-4 mb-2">
+        <div class="row justify-content-center ">
+            {{!-- <div class="row col-6"> --}}
+                <h6 class="col-sm-5.5 text-right ">總金額:</h6>
+                <h1 class="col-sm-6.5 text-left ">{{totalAmount}}</h1>
+            {{!-- </div> --}}
+        </div>
+    </div>
+    
+    <ul class="list-group">
+        {{#each records}}
+            <li class="list-group-item">
+                <div class="container">
+                    <div class="row justify-content-start ">
+                        <div class="col ">
+                            <i class="{{this.icon}} fa-4x mr-4" style="vertical-align: middle"></i>
+                        </div>
+                        <div class="col ">
+                            <div class="row  d-flex flex-column">
+                                <h4 style="display:inline; vertical-align: middle">
+                                    {{this.name}}
+                                </h4>
+                                <h5>{{this.date}}</h5>
+                            </div>
+                        </div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                        <div class="col align-self-center">
+                            <h3 class=" " style="vertical-align: middle">$ {{this.amount}}</h3>
+                        </div>
+                        <div class="col-auto mr-auto  align-self-center">
+                            <div class="row">
+                                <div class="col">
+                                    <a class ="btn btn-info" href="./record/edit/{{ this._id }}">修改</a>
+                                </div>
+                                <div class="col">  
+                                    <form action="/record/delete/{{this._id}}" method="POST">
+                                        <button type="submit" class="btn btn-danger">刪除</button>
+                                    </form> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </li>
+        {{/each}}
+    </ul>
+    <div class="d-flex justify-content-center mt-5">
+      <a href="/record/new" class="btn btn-info m-auto">新增支出</a>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

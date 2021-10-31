@@ -4,13 +4,13 @@
           "name": "totomomo",
           "email": "user1@example.com",
           "password": "12345678",
-          "record": [1,2,3,5]
+          "personalRecord": [1,2,3,5]
         },
         {
           "name": "gigibaba",
           "email": "user2@example.com",
           "password": "12345678",
-          "record": [4]
+          "personalRecord": [4]
         }
       ]
 }

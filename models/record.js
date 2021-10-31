@@ -17,6 +17,10 @@ const recordSchema = new Schema({
         type: Number,
         require: true
     },
+    date: {
+        type: Date,
+        require: true
+    },
     userId: {  // 加入關聯設定
         type: Schema.Types.ObjectId,
         ref: 'User',
